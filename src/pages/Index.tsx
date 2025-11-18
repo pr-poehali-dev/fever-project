@@ -1,9 +1,37 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!name || !email) {
+      toast({
+        title: "Ошибка",
+        description: "Пожалуйста, заполните все поля",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Успешно! 🎉",
+      description: "Мы отправили вам письмо с подтверждением",
+    });
+
+    setName("");
+    setEmail("");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
       <section className="relative overflow-hidden pt-20 pb-32 px-4">
@@ -293,17 +321,86 @@ const Index = () => {
       <section className="py-20 px-4 bg-gradient-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
         
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Начните обучение сегодня
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Получите доступ ко всем курсам и начните развивать свои навыки с первого дня
-          </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 text-lg px-8 py-6">
-            Зарегистрироваться бесплатно
-            <Icon name="Sparkles" className="ml-2" size={20} />
-          </Button>
+        <div className="container mx-auto max-w-2xl relative z-10">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              Начните обучение сегодня
+            </h2>
+            <p className="text-xl text-white/90">
+              Оставьте заявку и получите бесплатный доступ на 7 дней
+            </p>
+          </div>
+
+          <Card className="bg-white/95 backdrop-blur border-0 shadow-2xl">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                    <Icon name="User" size={16} />
+                    Ваше имя
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Иван Петров"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="h-12 text-base border-2 focus:border-primary"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                    <Icon name="Mail" size={16} />
+                    Email
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="ivan@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-12 text-base border-2 focus:border-primary"
+                  />
+                </div>
+
+                <Button 
+                  type="submit"
+                  size="lg" 
+                  className="w-full gradient-primary text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg h-14"
+                >
+                  Получить бесплатный доступ
+                  <Icon name="Sparkles" className="ml-2" size={20} />
+                </Button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  Регистрируясь, вы соглашаетесь с условиями использования и политикой конфиденциальности
+                </p>
+              </form>
+
+              <div className="mt-8 pt-8 border-t grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                    <Icon name="CheckCircle2" size={24} className="text-white" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">Без рисков</p>
+                  <p className="text-xs text-gray-500">7 дней бесплатно</p>
+                </div>
+                <div>
+                  <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                    <Icon name="Shield" size={24} className="text-white" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">Безопасно</p>
+                  <p className="text-xs text-gray-500">SSL защита</p>
+                </div>
+                <div>
+                  <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                    <Icon name="Zap" size={24} className="text-white" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">Быстро</p>
+                  <p className="text-xs text-gray-500">Доступ за 1 минуту</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
