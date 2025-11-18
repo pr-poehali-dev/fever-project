@@ -1,12 +1,249 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+      <section className="relative overflow-hidden pt-20 pb-32 px-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(217,70,239,0.1),transparent_50%)]"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-gradient-primary rounded-full text-white text-sm font-medium shadow-lg">
+                  🎓 Образовательная платформа
+                </span>
+              </div>
+              
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                <span className="gradient-text">Обучайся</span>
+                <br />
+                с удовольствием
+              </h1>
+              
+              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                Профессиональные курсы с интерактивными уроками и официальными сертификатами. 
+                Начни свой путь к новым знаниям уже сегодня!
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="gradient-primary text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg px-8 py-6">
+                  Начать обучение
+                  <Icon name="ArrowRight" className="ml-2" size={20} />
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/5 text-lg px-8 py-6">
+                  Смотреть курсы
+                </Button>
+              </div>
+
+              <div className="flex gap-8 pt-4">
+                <div>
+                  <div className="text-3xl font-bold gradient-text">10,000+</div>
+                  <div className="text-sm text-gray-600">Студентов</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold gradient-text">50+</div>
+                  <div className="text-sm text-gray-600">Курсов</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold gradient-text">95%</div>
+                  <div className="text-sm text-gray-600">Довольны</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative animate-scale-in lg:block hidden">
+              <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-3xl opacity-20 animate-float"></div>
+              <img 
+                src="https://cdn.poehali.dev/projects/400d3b67-b615-4234-a03a-41e4730bbed8/files/96c396f7-6736-4268-ac75-d7fb75e7de02.jpg"
+                alt="Образовательная платформа"
+                className="relative rounded-3xl shadow-2xl w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Почему выбирают <span className="gradient-text">нас</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Мы создали идеальную среду для эффективного онлайн-обучения
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur">
+              <CardContent className="p-8 space-y-4">
+                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Icon name="GraduationCap" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold">Качественные уроки</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Структурированные видео-уроки от практикующих экспертов с многолетним опытом в индустрии
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur">
+              <CardContent className="p-8 space-y-4">
+                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Icon name="Award" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold">Официальные сертификаты</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Получите признанные сертификаты после завершения курсов для вашего портфолио
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur">
+              <CardContent className="p-8 space-y-4">
+                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Icon name="Users" size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold">Поддержка 24/7</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Наставники и сообщество всегда готовы помочь вам на каждом этапе обучения
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Популярные <span className="gradient-text">курсы</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Выберите направление и начните учиться прямо сейчас
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Веб-разработка",
+                description: "От основ HTML до современных фреймворков",
+                icon: "Code2",
+                lessons: 45,
+                duration: "12 недель",
+                gradient: "from-purple-500 to-pink-500"
+              },
+              {
+                title: "Дизайн UI/UX",
+                description: "Создание интерфейсов и пользовательского опыта",
+                icon: "Palette",
+                lessons: 38,
+                duration: "10 недель",
+                gradient: "from-pink-500 to-orange-500"
+              },
+              {
+                title: "Маркетинг",
+                description: "Современные стратегии digital-продвижения",
+                icon: "TrendingUp",
+                lessons: 32,
+                duration: "8 недель",
+                gradient: "from-orange-500 to-purple-500"
+              }
+            ].map((course, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 overflow-hidden bg-white">
+                <div className={`h-2 bg-gradient-to-r ${course.gradient}`}></div>
+                <CardContent className="p-6 space-y-4">
+                  <div className={`w-14 h-14 bg-gradient-to-r ${course.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon name={course.icon as any} size={28} className="text-white" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">{course.title}</h3>
+                    <p className="text-gray-600">{course.description}</p>
+                  </div>
+
+                  <div className="flex gap-4 text-sm text-gray-500 pt-2">
+                    <div className="flex items-center gap-1">
+                      <Icon name="BookOpen" size={16} />
+                      <span>{course.lessons} уроков</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="Clock" size={16} />
+                      <span>{course.duration}</span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full gradient-primary text-white group-hover:shadow-lg transition-all">
+                    Подробнее
+                    <Icon name="ArrowRight" className="ml-2" size={16} />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gradient-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+        
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Начните обучение сегодня
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Получите доступ ко всем курсам и начните развивать свои навыки с первого дня
+          </p>
+          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 text-lg px-8 py-6">
+            Зарегистрироваться бесплатно
+            <Icon name="Sparkles" className="ml-2" size={20} />
+          </Button>
+        </div>
+      </section>
+
+      <footer className="py-12 px-4 bg-gray-900 text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4 gradient-text">EduPlatform</h3>
+              <p className="text-gray-400">Онлайн-образование нового поколения</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Курсы</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">Веб-разработка</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Дизайн</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Маркетинг</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">О нас</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">Преподаватели</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Отзывы</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Контакты</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Поддержка</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="hover:text-white cursor-pointer transition-colors">FAQ</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Помощь</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Политика</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 EduPlatform. Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
