@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
@@ -187,6 +188,105 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Часто задаваемые <span className="gradient-text">вопросы</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Ответы на популярные вопросы о наших курсах
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border rounded-2xl px-6 bg-gradient-to-r from-purple-50 to-pink-50 border-purple-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="HelpCircle" size={20} className="text-white" />
+                  </div>
+                  Сколько времени займет обучение?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Длительность курсов варьируется от 8 до 12 недель в зависимости от программы. Вы можете учиться в своем темпе — все материалы доступны 24/7, и вы сами выбираете удобный график занятий.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border rounded-2xl px-6 bg-gradient-to-r from-pink-50 to-orange-50 border-pink-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="Award" size={20} className="text-white" />
+                  </div>
+                  Признаются ли ваши сертификаты?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Да, наши сертификаты признаются работодателями по всему миру. После успешного завершения курса вы получаете официальный сертификат, который можно добавить в LinkedIn, резюме и портфолио.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border rounded-2xl px-6 bg-gradient-to-r from-orange-50 to-purple-50 border-orange-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="CreditCard" size={20} className="text-white" />
+                  </div>
+                  Какие способы оплаты доступны?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Мы принимаем все основные банковские карты, электронные кошельки и предлагаем рассрочку на 6 месяцев без переплат. Также доступен бесплатный пробный период 7 дней для новых студентов.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border rounded-2xl px-6 bg-gradient-to-r from-purple-50 to-pink-50 border-purple-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="Users" size={20} className="text-white" />
+                  </div>
+                  Есть ли поддержка от преподавателей?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Да, каждый студент получает доступ к персональному наставнику и активному сообществу. Вы можете задавать вопросы в чате поддержки 24/7, участвовать в еженедельных онлайн-встречах и получать обратную связь по домашним заданиям.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border rounded-2xl px-6 bg-gradient-to-r from-pink-50 to-orange-50 border-pink-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="Laptop" size={20} className="text-white" />
+                  </div>
+                  Нужны ли специальные знания для старта?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Нет, большинство наших курсов рассчитаны на начинающих. Мы начинаем с основ и постепенно переходим к более продвинутым темам. Для некоторых специализированных курсов могут потребоваться базовые знания — это всегда указано в описании.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border rounded-2xl px-6 bg-gradient-to-r from-orange-50 to-purple-50 border-orange-100">
+              <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-md">
+                    <Icon name="RefreshCw" size={20} className="text-white" />
+                  </div>
+                  Можно ли вернуть деньги?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 pb-6 pl-14 text-base leading-relaxed">
+                Да, мы предлагаем 14-дневную гарантию возврата денег. Если курс вам не подошел, вы можете вернуть 100% стоимости в течение первых двух недель обучения без объяснения причин.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
